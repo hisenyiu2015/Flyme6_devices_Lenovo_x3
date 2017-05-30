@@ -63301,6 +63301,37 @@
     return-void
 .end method
 
+.method final sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;[I)V
+    .locals 8
+    .param p1, "action"    # Ljava/lang/String;
+    .param p2, "pkg"    # Ljava/lang/String;
+    .param p3, "extras"    # Landroid/os/Bundle;
+    .param p4, "targetPkg"    # Ljava/lang/String;
+    .param p5, "finishedReceiver"    # Landroid/content/IIntentReceiver;
+    .param p6, "userIds"    # [I
+
+    .prologue
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    move-object/from16 v2, p2
+
+    const/4 v3, 0x0
+
+    move-object/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    invoke-virtual/range {v0 .. v7}, Lcom/android/server/pm/PackageManagerService;->sendPackageBroadcast(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/IIntentReceiver;[I)V
+
+    return-void
+.end method
+
 .method public setApplicationEnabledSetting(Ljava/lang/String;IIILjava/lang/String;)V
     .locals 7
     .param p1, "appPackageName"    # Ljava/lang/String;
