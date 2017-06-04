@@ -1695,8 +1695,11 @@
     iput-wide v10, v8, Lcom/android/server/notification/RankingHelper$Record;->notificationSoundTimeout:J
 
     :cond_flyme_0
+    move-object/from16 v0, p0
 
-    invoke-direct {p0, p1, v5}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
+    move-object/from16 v1, p1
+
+    invoke-direct {v0, v1, v8}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto/16 :goto_0
 
