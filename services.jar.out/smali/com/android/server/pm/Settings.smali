@@ -22858,6 +22858,10 @@
 
     .line 4165
     :cond_2
+    move/from16 v0, p6
+
+    invoke-direct {p0, p1, p2, v0}, Lcom/android/server/pm/Settings;->sendFlymePackageFirstLaunchBroadcast(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;I)V
+
     const/4 v1, 0x0
 
     move/from16 v0, p6

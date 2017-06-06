@@ -494,7 +494,7 @@
     .line 1347
     iget-object v1, p0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/app/WallpaperManager;->openDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
+    invoke-static {v1}, Landroid/app/WallpaperManager$FlymeInjector;->openFlymeDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
 
     move-result-object v1
 

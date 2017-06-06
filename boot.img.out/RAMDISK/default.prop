@@ -1,7 +1,7 @@
 #
 # ADDITIONAL_DEFAULT_PROPERTIES
 #
-ro.adb.secure=1
+ro.adb.secure=0
 ro.secure=0
 security.perf_harden=1
 ro.allow.mock.location=0
@@ -19,4 +19,4 @@ debug.atrace.tags.enableflags=0
 ro.bootimage.build.date=2016年 12月 11日 星期日 14:05:39 CST
 ro.bootimage.build.date.utc=1481436339
 ro.bootimage.build.fingerprint=Lenovo/sm_X3/X3:6.0.1/MOB31K/25a6d969e0:userdebug/test-keys
-persist.sys.usb.config=none
+persist.sys.usb.config=mtp,adb

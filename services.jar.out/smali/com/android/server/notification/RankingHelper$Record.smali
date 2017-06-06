@@ -19,6 +19,10 @@
 
 
 # instance fields
+.field mFlymeHeadsUp:I
+
+.field mFlymeRemind:Z
+
 .field keyguard:I
 
 .field notificationSoundTimeout:J
@@ -75,6 +79,14 @@
     const-wide/16 v0, 0x0
 
     iput-wide v0, p0, Lcom/android/server/notification/RankingHelper$Record;->notificationSoundTimeout:J
+
+    const/4 v0, -0x1
+
+    iput v0, p0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeHeadsUp:I
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/android/server/notification/RankingHelper$Record;->mFlymeRemind:Z
 
     return-void
 .end method

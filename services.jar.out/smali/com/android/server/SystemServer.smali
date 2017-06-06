@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/SystemServer$FlymeInjector;,
         Lcom/android/server/SystemServer$AdbPortObserver;
     }
 .end annotation
@@ -1524,7 +1525,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v70, Lcom/android/server/InputMethodManagerService;
+    new-instance v70, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v70
 
@@ -1669,7 +1670,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v77, Lcom/android/server/LockSettingsService;
+    new-instance v77, Lcom/android/server/FlymeExtLockSettingsService;
 
     move-object/from16 v0, v77
 
@@ -1746,7 +1747,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v97, Lcom/android/server/statusbar/StatusBarManagerService;
+    new-instance v97, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
 
     move-object/from16 v0, v97
 
@@ -2809,12 +2810,15 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1c
+    goto/16 :goto_flyme_0
+
     if-nez v56, :cond_1d
 
     if-eqz v51, :cond_32
 
     .end local v33    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1d
+    :goto_flyme_0
     :goto_26
     if-nez v56, :cond_1e
 
@@ -3110,6 +3114,15 @@
     check-cast v82, Lcom/android/server/MmsServiceBroker;
 
     .local v82, "mmsService":Lcom/android/server/MmsServiceBroker;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v4, v110
+
+    move-object/from16 v5, v107
+
+    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
+
     :try_start_3a
     invoke-static/range {v65 .. v65}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 

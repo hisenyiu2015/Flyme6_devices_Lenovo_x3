@@ -9670,6 +9670,11 @@
     move-result v3
 
     .local v3, "oldRules":I
+
+    invoke-static {p0, p1, v7}, Lcom/android/server/net/NetworkPolicyManagerService$FlymeInjector;->flymeChangeUidRules(Lcom/android/server/net/NetworkPolicyManagerService;II)I
+
+    move-result v7
+
     if-nez v7, :cond_d
 
     iget-object v9, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRules:Landroid/util/SparseIntArray;

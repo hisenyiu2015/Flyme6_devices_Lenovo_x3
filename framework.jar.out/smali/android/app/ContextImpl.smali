@@ -437,6 +437,8 @@
 
     move-result-object v14
 
+    invoke-direct {p0, v14}, Landroid/app/ContextImpl;->setFlymeThemeResource(Landroid/content/res/Resources;)V
+
     .line 1885
     :cond_4
     :goto_4
