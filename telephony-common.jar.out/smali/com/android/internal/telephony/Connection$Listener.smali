@@ -42,7 +42,13 @@
 .method public abstract onExtrasChanged(Landroid/os/Bundle;)V
 .end method
 
+.method public abstract onLocalVideoCapabilityChanged(Z)V
+.end method
+
 .method public abstract onMultipartyStateChanged(Z)V
+.end method
+
+.method public abstract onRemoteVideoCapabilityChanged(Z)V
 .end method
 
 .method public abstract onVideoProviderChanged(Landroid/telecom/Connection$VideoProvider;)V
