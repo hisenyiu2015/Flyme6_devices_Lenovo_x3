@@ -1,0 +1,12 @@
+kernel=kernel
+ramdisk=RAMDISK
+page_size=4096
+kernel_size=19851043
+ramdisk_size=1420471
+base_addr=0x00000000
+kernel_offset=0x00008000
+ramdisk_offset=0x01000000
+tags_offset=0x00000100
+cmd_line='console=tty60,115200,n8 androidboot.console=tty60 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5 androidboot.selinux=permissive'
+board=""
+format=gzip

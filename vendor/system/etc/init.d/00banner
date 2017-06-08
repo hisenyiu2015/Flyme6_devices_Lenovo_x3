@@ -1,0 +1,6 @@
+#!/system/bin/sh
+#
+# Print startup info
+#
+L="log -p i -t sm"
+$L "Welcome to Android `getprop ro.build.version.release` / SudaMod-`getprop ro.sm.version`";

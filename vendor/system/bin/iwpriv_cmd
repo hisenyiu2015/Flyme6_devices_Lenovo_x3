@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+IOCTL=$(getprop sys.iwpriv.ioctl)
+VAR_2=$(getprop sys.iwpriv.var_2)
+echo "we would excute: iwpriv wlan0 $IOCTL $VAR_2"
+RES=$(iwpriv wlan0 $IOCTL $VAR_2 2>&1)
+setprop sys.iwpriv.res "$RES"
+echo "$RES"
