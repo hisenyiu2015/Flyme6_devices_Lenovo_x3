@@ -1091,6 +1091,30 @@
     return-object v2
 .end method
 
+.method public matchesCallFilter(Landroid/os/Bundle;)Z
+    .locals 3
+    .param p1, "extras"    # Landroid/os/Bundle;
+
+    .prologue
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, p1}, Landroid/app/NotificationManager;->matchesCallFilter(Landroid/os/Bundle;)[Z
+
+    move-result-object v0
+
+    .local v0, "result":[Z
+    if-eqz v0, :cond_0
+
+    array-length v2, v0
+
+    if-lez v2, :cond_0
+
+    aget-boolean v1, v0, v1
+
+    :cond_0
+    return v1
+.end method
+
 .method public notify(ILandroid/app/Notification;)V
     .locals 1
     .param p1, "id"    # I
