@@ -331,7 +331,7 @@
 
     iput-object v1, p0, Landroid/hardware/Camera;->mAutoFocusCallbackLock:Ljava/lang/Object;
 
-    invoke-direct {p0, p1}, Landroid/hardware/Camera;->hook_cameraInitNormal(I)I
+    invoke-direct {p0, p1}, Landroid/hardware/Camera;->cameraInitNormal(I)I
 
     move-result v0
 
@@ -1001,6 +1001,18 @@
     .locals 4
 
     .prologue
+    invoke-static {}, Landroid/hardware/Camera;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_flyme_0
+
     .line 371
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
@@ -1053,6 +1065,18 @@
     .param p0, "cameraId"    # I
 
     .prologue
+    invoke-static {}, Landroid/hardware/Camera;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_flyme_0
+
     .line 361
     new-instance v0, Landroid/hardware/Camera;
 
@@ -2488,9 +2512,8 @@
 .method public final native unlock()V
 .end method
 
-.method private hook_cameraInitNormal(I)I
+.method private static isFlymePermissionGranted()Z
     .locals 1
-    .param p1, "cameraId"    # I
 
     .prologue
     const/16 v0, 0x4c
@@ -2501,14 +2524,13 @@
 
     if-eqz v0, :cond_0
 
-    invoke-direct {p0, p1}, Landroid/hardware/Camera;->cameraInitNormal(I)I
+    const/4 v0, 0x0
 
-    move-result v0
-
+    :goto_0
     return v0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    return v0
+    goto :goto_0
 .end method
